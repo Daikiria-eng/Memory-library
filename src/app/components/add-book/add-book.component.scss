@@ -1,0 +1,48 @@
+@use '../../../shared/styles/vars.scss' as vars;
+@use '../../../shared/styles/mixins.scss' as *;
+
+button{
+    @include buttons;
+    margin: 7px 10px;
+}
+input{
+    @include inputs;
+    margin: 7px;
+}
+#add_book{
+    background-color: vars.$based_gray;
+    text-align: center;
+}
+.book_in{
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap:wrap;
+}
+.book_out{
+    padding: 10px;
+    text-align: center;
+}
+.add_book_form{
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    background-color: vars.$light_tpcy;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.labels{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    label{
+        margin: 15.8px 5px;
+    }
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+    

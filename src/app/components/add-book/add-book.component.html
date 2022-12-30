@@ -1,0 +1,21 @@
+<div id="add_book">
+    <h2>Insertar un libro</h2>
+    <form action="" (ngSubmit)="onSubmit()" class="add_book_form">
+        <div class="book_in">
+            <div class="labels">
+                <label for="book_title">Título</label>
+                <label for="book_author">Autor</label>
+            </div>
+            <div class="inputs">
+                <input type="text" name="title" id="book_title" placeholder="Título del libro" [(ngModel)]="book.title" autofocus/>
+                <input type="text" name="author" id="book_author" placeholder="Autor del libro" [(ngModel)]="book.author"/>
+                <input type="hidden" name="avail" value="true" [(ngModel)]="book.avail"/>
+            </div>
+        </div>
+        <div class="book_out">
+            <div class="submit_button">
+                <button type="submit">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>

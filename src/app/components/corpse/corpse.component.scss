@@ -1,0 +1,22 @@
+@use '../../../shared/styles/vars.scss' as vars;
+@use '../../../shared/styles/mixins.scss' as *;
+
+button{
+    @include buttons;
+}
+#coffing{
+    padding: 14px;
+} 
+#titled{
+    text-align: center;
+}
+#buttons{
+    padding: 20px;
+    margin: 7px;
+    border-radius: 5px;
+    background-color: vars.$based_gray;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}

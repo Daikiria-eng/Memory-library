@@ -1,0 +1,11 @@
+<div id="corpse">
+    <div class="book" *ngFor="let book of books">
+        <ul class="info">
+            <li><h3>{{book.title}}</h3></li>
+            <li>{{book.author}}</li>
+            <li *ngIf="book.avail; else notAccesible">Accesible: Sí</li>
+            <ng-template #notAccesible>Accesible: No</ng-template>
+        </ul>
+        <button (click)="onDelete(book)">Eliminar</button>
+    </div>
+</div>
