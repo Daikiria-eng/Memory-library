@@ -19,9 +19,9 @@ export class CorpseComponent {
     this.books=this.books.filter(x=>x.id!==book.id);
   }
   getAllBooks(){
-    /*this.bookService.getAllBooks().subscribe((receivedBooks)=>{
+    this.bookService.sharingBooks().subscribe((receivedBooks)=>{
       this.books=receivedBooks;
-    });*/
+    });
   }
   
   pruebaAdd(){

@@ -13,7 +13,7 @@ export class BookService {
   private books$:BehaviorSubject<book[]>;
 
   constructor(private http:HttpClient){
-    /*this.books=[
+    this.books=[
       {
         id:1,
         title:'La divina comedia',
@@ -30,15 +30,11 @@ export class BookService {
         author:'José Saramago',
         avail:true
       }
-    ];*/
+    ];
     this.books$=new BehaviorSubject<book[]>(this.books);
   }
   
-  getAllBooks(){
-    console.log("asdf");
-  }
-  
-  getAllBookDocuments():Observable<any>{
+  getAllBooks():Observable<any>{
     return this.http.get(`${this.url}/get-all`);
   }
   

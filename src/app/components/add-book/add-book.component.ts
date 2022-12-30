@@ -16,6 +16,6 @@ export class AddBookComponent {
   onSubmit(){
     const newBook:book=this.book;
     this.bookService.addBook(newBook);
-    //this.router.navigate(['/']);
+    this.router.navigate(['/']);
   }
 }
