@@ -19,7 +19,7 @@ export class CorpseComponent {
     this.books=this.books.filter(x=>x.id!==book.id);
   }
   getAllBooks(){
-    this.bookService.sharingBooks().subscribe((receivedBooks)=>{
+    this.bookService.getAllBooks().subscribe((receivedBooks)=>{
       this.books=receivedBooks;
     });
   }

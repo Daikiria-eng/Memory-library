@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { book } from '../dto/book.dto';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -38,9 +38,12 @@ export class BookService {
     return this.http.get(`${this.url}/get-all`);
   }
   
-  /*insertBook(newBook:book):Observable<any>{
-    
-  }*/
+  insertBook(newBook:book):Observable<any>{
+    const headers=new HttpHeaders({
+      'Content-Type':'Application/json'
+    });
+    return this.http.post<book>(`${this.url}/insert`,newBook,{headers});
+  }
   
   sharingBooks():Observable<book[]>{
     return this.books$.asObservable();
@@ -53,9 +56,22 @@ export class BookService {
     this.books$.next(this.books);
   }
 
-  addBook(book:book){
-    book.id=this.books[this.books.length-1].id+1;
-    book.avail=true;
-    this.books.push(book);
+  addBook(book:book):boolean{
+    const booksLength:number=this.books.length;
+    let exists:boolean=false;
+    for(let i=0;i<booksLength;i++){
+      if(this.books[i].title==book.title)
+        exists=true;
+    }
+    
+    if(!exists){
+      book.id=this.books[booksLength-1].id+1;
+      book.avail=true;
+      this.books.push(book);
+      return true;
+    }else{
+      alert('El libro Ya esxiste');
+      return false;
+    }
   }
 }

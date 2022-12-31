@@ -15,7 +15,13 @@ export class AddBookComponent {
   
   onSubmit(){
     const newBook:book=this.book;
-    this.bookService.addBook(newBook);
+    /*if(this.bookService.addBook(newBook))
+      this.router.navigate(['/']);*/
+    this.bookService.insertBook(newBook).subscribe(
+      (response)=>{
+        console.log(response);
+      }
+    );
     this.router.navigate(['/']);
   }
 }
