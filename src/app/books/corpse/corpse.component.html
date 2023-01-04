@@ -1,0 +1,26 @@
+<div id="coffin">
+    <div id="titled">
+        <h1>Prueba</h1>
+    </div>
+    <div id="buttons">
+        <button (click)="goToAdd()">Añadir un libro</button>
+        <button>Iniciar sesión</button>
+    </div>
+    <div id="corpse">
+        <div id="filter">
+            <form id="filter_form">
+                <label>Filtro</label>
+                <div id="filter_input">
+                    <input type="text" name="title" id="filter_input_text" placeholder="Filtrar por nombre o autor"/>
+                    <button type="submit" id="search">P</button>
+                    <button type="reset">X</button>
+                </div>
+            </form>
+        </div>
+        <app-book-card 
+            ngClass="corpse"
+            [books]="books"
+            (deleteBook)="deleteBook($event)"
+        ></app-book-card>
+    </div>
+</div>

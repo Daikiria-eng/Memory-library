@@ -1,28 +1,35 @@
-import { Component,Input,Output,EventEmitter } from '@angular/core';
-import { book } from '../../dto/book.dto';
-import { BookService } from '../../service/book.service';
+import { Component,Input,Output,EventEmitter,OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { book } from 'src/app/dto/book.dto';
+import { BookService } from 'src/app/service/book.service';
 
 @Component({
   selector: 'app-corpse',
   templateUrl: './corpse.component.html',
   styleUrls: ['./corpse.component.scss']
 })
-export class CorpseComponent {
+export class CorpsePage implements OnInit{
   books:book[]=[];
   
-  constructor(private bookService:BookService){
+  constructor(private bookService:BookService,private router:Router){
   }
-  ngOnInit():void{
-    this.getAllBooks();
+  async ngOnInit(){
+    await this.getAllBooks();
   }
   deleteBook(book:book){
     this.books=this.books.filter(x=>x.id!==book.id);
   }
-  getAllBooks(){
-    this.bookService.getAllBooks().subscribe((receivedBooks)=>{
+  async getAllBooks(){
+    await this.bookService.getAllBooks().subscribe((receivedBooks)=>{
       this.books=receivedBooks;
     });
   }
+  
+
+  goToAdd(){
+    this.router.navigate(['/add']);
+  }
+
   
   pruebaAdd(){
     this.bookService.setSharingBooks({id:4,title:'La filosofía del tocador',author:'Marqués de Sadé',avail:true});

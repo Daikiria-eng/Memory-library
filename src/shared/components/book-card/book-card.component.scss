@@ -1,5 +1,5 @@
-@use '../../../shared/styles/vars.scss' as vars;
-@use '../../../shared/styles/mixins.scss' as *;
+@import '../../../shared/styles/vars.scss';
+@import '../../../shared/styles/mixins.scss';
 
 #corpse{
     display: flex;
@@ -9,7 +9,7 @@
 .book{
     margin: 7px;
     padding: 1.2%;
-    background-color: vars.$light_tpcy;
+    background-color: $light_tpcy;
     color: black;
     border: 2px solid black;
     border-radius: 10px;
@@ -23,15 +23,15 @@
     -webkit-box-shadow: 13px 17px 30px -3px rgba(0,0,0,0.75);
     -moz-box-shadow: 13px 17px 30px -3px rgba(0,0,0,0.75);*/
     
-    box-shadow: -3px 7px 100px 52px vars.$dark_tcpy inset;
-    -webkit-box-shadow: -3px 7px 100px 52px vars.$dark_tcpy inset;
-    -moz-box-shadow: -3px 7px 100px 52px vars.$dark_tcpy inset;
+    box-shadow: -3px 7px 100px 52px $dark_tcpy inset;
+    -webkit-box-shadow: -3px 7px 100px 52px $dark_tcpy inset;
+    -moz-box-shadow: -3px 7px 100px 52px $dark_tcpy inset;
 
     .info{
         padding: 10px;
         border-radius: 7px;
         list-style: none;
-        background-color: vars.$light_tpcy;
+        background-color: $light_tpcy;
     }
     h1{
         margin: 2px 1px 4px 1px;

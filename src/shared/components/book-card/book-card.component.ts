@@ -1,5 +1,5 @@
 import { Component,Input,Output,EventEmitter } from '@angular/core';
-import { book } from '../../dto/book.dto';
+import { book } from 'src/app/dto/book.dto';
 
 @Component({
   selector: 'app-book-card',
